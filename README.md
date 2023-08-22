@@ -1,2 +1,2 @@
 # archcraft.cfg
-A One Dark based theme for  Archcraft
+<img src="preview.png">
