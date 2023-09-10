@@ -1,5 +1,4 @@
 # archcraft.cfg
-<img src="preview.png">
 
 ## About
 This is a small configuration for <a href="https://archcraft.io/">Archcraft</a>, changing some settings like the order of elements in <a href="https://github.com/polybar/polybar">Polybar</a>, the space between windows, and a border to simulate a smoother feel in the windows.
