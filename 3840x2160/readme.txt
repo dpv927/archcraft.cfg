@@ -2,12 +2,11 @@
 | Theme for 3840x2160 resolution | <- @dpv927
 ----------------------------------
 
-En este directorio podras encontrar un script para instalar el tema en tu sistema
-(install.sh), junto a los archivos que han sido creados especificamente para esta 
-resolucion.
+In this directory, you can find a script to install the theme on your system (install.sh),
+along with files that have been specifically created for this resolution.
 
-Tanto las configuraciones de polybar, rofi y alacritty han sido modificadas para que
-se vean con la mayor calidad y a un tamanio correcto.
+Both the configurations for polybar, rofi, and alacritty have been modified to ensure they
+appear with the highest quality and at the correct font size and dimension.
 
-Nota: Algunos widgets que venian con polybar por defecto se han quitado, como por ejemplo
-mpd (reproductor de musica) y la bateria del sistema (esta ultima porque utilizo pc). 
+Note: Some widgets that came with polybar by default have been removed, such as mpd 
+(music player) and the system battery (the latter because I use a desktop PC).
