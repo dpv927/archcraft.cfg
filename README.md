@@ -35,30 +35,31 @@ Below you can find a guide to install this theme on your system and apply it, as
   
 ## Installing the theme
 
-Tienes que clonar este repositorio, para luego copiar el tema dentro de la ruta adecuada de tu sistema. Antes de esto,  Como durante la guia se van a descargar varios archivos, seria correcto hacer un directorio para guardar estos archivos temmporales y luego eliminarlos:
+You have to clone this repository, then copy the theme into the appropriate path on your system. Before this, as during the guide you will download several files, it would be correct to make a directory to save these temporary files and then delete them:
 
 ```bash
-# Haz el directorio y entra
+# Make the directory and enter
 cd && mkdir dpv-theme-files
-# Clona el repositorio
+
+# Clone the repo
 cd dpv-theme-files
 git clone https://github.com/dpv927/dotfiles.git && cd dotfiles
 ```
 
-Ahora tienes que copiar el tema a la ruta de tu sistema archcraft en el que estan guardados todos los temas:
+Now you have to copy the theme to the path of your archcraft system where all the themes are stored:
 
 ```bash
-# Define la resolucion de tu pantalla con una de las siguientes variables: 
+# Define your screen resolution with one of the following variables: 
 # SCR_RES="1366x768"
 SCR_RES="3840x2160"
 cp -r dotfiles/${SCR_RES}/theme/ ~/.config/bspwm/themes
 
-# Si quieres, puedes cambiar el nombe del tema
+# If you want to, you can change the name of the topic
 THEME_NAME="theme-name"
 mv ~/.config/bspwm/themes/theme ~/.config/bspwm/themes/${THEME_NAME}
 ```
 
-Por ultimo, copia el contenido de mi archivo Xresources para arreglar el tamanio del cursor:
+Finally, copy the contents of my Xresources file to fix the cursor size:
 
 ```bash
 cat dotfiles/${SCR_RES}/.Xresources >> ~/.Xresources
@@ -66,26 +67,26 @@ cat dotfiles/${SCR_RES}/.Xresources >> ~/.Xresources
 
 ## Installing the GTK theme
 
-El tema que uso para GTK es el tema oficial de <a href="https://github.com/catppuccin/gtk">Catppuccin</a>. Puedes instalarlo con <a href="https://aur.archlinux.org/packages/yay"> yay</a>rapidamente siguiendo el siguiente comando:
 
 ```bash
 yay -S catppuccin-gtk-theme-frappe
 ```
 
 ## Installing the icon theme
-El tema que uso para los iconos del sistema es el tema oficial de <a href="https://github.com/catppuccin/papirus-folders">Catppuccin</a>. Primero necesitas tener el tema de iconos <a href="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme">Papirus</a>, el cual se instala con el siguiente comando: 
+
+The theme I use for the system icons is the official <a href="https://github.com/catppuccin/papirus-folders">Catppuccin</a> theme. First you need to have the <a href="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme">Papirus</a> icon theme, which is installed with the following command:
 
 ```bash
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 ```
 
-Finalmente instalamos el tema de Catppuccin:
+Finally we installed the Catppuccin theme:
 
 ```bash
-# Entra de nuevo en el directorio de archivos
+# Enter the file directory again
 cd ~/dpv-theme-files
 
-# Clona e instala los archivos del tema
+# Clone and install the theme's files
 git clone https://github.com/catppuccin/papirus-folders.git && cd papirus-folders
 sudo cp -r src/* /usr/share/icons/Papirus
 ./papirus-folders -C cat-frappe-lavender --theme Papirus-Dark
@@ -93,18 +94,19 @@ sudo cp -r src/* /usr/share/icons/Papirus
 
 ## Applying the theme
 
-Aplicar el tema es muy sencillo, solo tienes que presionar las teclas ``Win+t`` (esa es la combinacion por defecto) o ejecutar el script del tema:
+Applying the theme is very simple, just press the ``Win+t`` keys (that is the default combination) or run the theme script:
 
 ```bash
 cd ~/.config/bspwm/themes/${THEME_NAME} && ./apply.sh
 ```
 
 ## Lvim config
-Opcionalmente puedes instalar mi configuracion para LunarVim, que es una distribucion muy util y elegante de Neovim. Para ello, instala Lunarvim tal y como se indica en su pagina oficial y copia mi configuracion:
+Optionally you can install my configuration for LunarVim, which is a very useful and elegant distribution of Neovim. To do so, install Lunarvim as indicated in its official page and copy my configuration:
 
 ```bash
 cp -r ~/cd dpv-theme-files/dotfiles/lvim/ ~/.config
 ```
 
 ## License
-Este repositorio no esta dispuesto bajo ninguna licencia puesto que son archivos basados en gran parte a la configuracion inicial de Archcraft y los esquemas de colores provienen de Catppuccin.
+
+This repository is not licensed under any license since the files are largely based on the initial Archcraft configuration and the color schemes come from Catppuccin.
