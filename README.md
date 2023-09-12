@@ -101,7 +101,7 @@ cd ~/.config/bspwm/themes/${THEME_NAME} && ./apply.sh
 ```
 
 ## Lvim config
-Optionally you can install my configuration for LunarVim, which is a very useful and elegant distribution of Neovim. To do so, install Lunarvim as indicated in its official page and copy my configuration:
+Optionally you can install my configuration for <a href="https://www.lunarvim.org/es/">LunarVim</a>, which is a very useful and elegant distribution of <a href="https://neovim.io/">Neovim</a>. To do so, install Lunarvim as indicated in its official page and copy my configuration:
 
 ```bash
 cp -r ~/cd dpv-theme-files/dotfiles/lvim/ ~/.config
