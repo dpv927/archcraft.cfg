@@ -1,10 +1,52 @@
--- Read the docs: https://www.lunarvim.org/docs/configuration
--- Example configs: https://github.com/LunarVim/starter.lvim
--- Video Tutorials: https://www.youtube.com/watch?v=sFA9kX-Ud_c&list=PLhoH5vyxr6QqGu0i7tt_XoVK9v-KvZ3m6
--- Forum: https://www.reddit.com/r/lunarvim/
--- Discord: https://discord.com/invite/Xb9B4Ny
---
+-- Customize dashboard logo. Took it from:
+-- https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/misc/hydra.lua
+lvim.builtin.alpha.dashboard.section.header.val = {
+	"                                   ",
+	"                                   ",
+	"                                   ",
+	"   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ",
+	"    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ",
+	"          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ",
+	"           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ",
+	"          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ",
+	"   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ",
+	"  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ",
+	" ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ",
+	" ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ ",
+	"      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ",
+	"       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ",
+	"                                   ",
+}
 
+-- Change lvim footer
+-- A random footer could be a great idea
+local function footer_val()
+  local phrases = {
+    "What is worse than 'sudo rm -rf /'?",
+    "Emacs? What is that",
+    "It's not a bug, it's a undocumented feature",
+    "Made by @dpv927",
+    "**typing sounds**",
+    "Please, compile this time!",
+    "LunarVim, LunarVim, LunarVim...",
+    "Maybe you need another plugin",
+    "Yes, the dashboard is looking good"
+  }
+  return phrases[math.random(1,#phrases)]
+end
+lvim.builtin.alpha.dashboard.section.footer.val = footer_val
+
+-- You can try a fixed message instead
+-- lvim.builtin.alpha.dashboard.section.footer.val = "@dpv927"
+
+-- Define lvim list of plugins.
+lvim.plugins = {
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {'andweeb/presence.nvim'},
+  {'norcalli/nvim-colorizer.lua'}
+}
+
+-- Catppuccin color theme configuration
 require("catppuccin").setup({
     flavour = "frappe",
     transparent_background = false,
@@ -16,13 +58,7 @@ require("catppuccin").setup({
         conditionals = { "italic" },
     },
 })
-
 lvim.colorscheme = "catppuccin"
 
-lvim.plugins = {
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  {'andweeb/presence.nvim'},
-  {'norcalli/nvim-colorizer.lua'}
-}
-
+-- Start colorizer
 require'colorizer'.setup()
