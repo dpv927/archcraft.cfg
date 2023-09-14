@@ -4,7 +4,7 @@
 </div>
 
 <div class='preview'>
-    <!-- Theme preview- might add thunar, ranger.. -->
+    <!-- Theme preview, thunar, and lokscreen -->
     <br><img src='resources/preview.png'>
     <br><img src='resources/gtk.png'>
 </div>
@@ -66,7 +66,7 @@ cat dotfiles/${SCR_RES}/.Xresources >> ~/.Xresources
 
 ## Installing the GTK theme
 
-I use the official Catppuccin theme for GTK. You can install it with ``yay``:
+I use the official Catppuccin theme for GTK. You can install it with <a href="https://aur.archlinux.org/packages/yay">yay</a>:
 
 ```bash
 yay -S catppuccin-gtk-theme-frappe
