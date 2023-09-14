@@ -7,6 +7,7 @@
     <!-- Theme preview, thunar, and lokscreen -->
     <br><img src='resources/preview.png'>
     <br><img src='resources/gtk.png'>
+    <br><img src="resources/login.png">
 </div>
 
 <h1>
@@ -24,7 +25,6 @@ Below you can find a guide to install this theme on your system and apply it, as
 
 ## Table of Contents
 
-- <a href="#information">Information</a>
 - <a href="#installing-the-theme">Installing the theme</a>
 - <a href="#installing-the-gtk-theme">Installing the GTK theme</a>
 - <a href="#installing-the-icon-theme">Installing the icon theme</a>
