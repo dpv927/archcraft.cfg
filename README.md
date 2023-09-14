@@ -26,9 +26,10 @@ Below you can find a guide to install this theme on your system and apply it, as
 
 - <a href="#information">Information</a>
 - <a href="#installing-the-theme">Installing the theme</a>
-- <a href="#applying-the-theme">Applying the theme</a>
 - <a href="#installing-the-gtk-theme">Installing the GTK theme</a>
 - <a href="#installing-the-icon-theme">Installing the icon theme</a>
+- <a href="#changing-the-lockscreen">Changing the lockscreen</a>
+- <a href="#applying-the-theme">Applying the theme</a>
 - <a href="#lvim-config">Lvim config</a>
 - <a href="#license">License</a>
   
@@ -89,6 +90,22 @@ git clone https://github.com/catppuccin/papirus-folders.git
 # Install the theme
 sudo cp -r papirus-folders/src/* /usr/share/icons/Papirus
 ./papirus-folders/papirus-folders -C cat-frappe-lavender --theme Papirus-Dark
+```
+
+## Changing the lockscreen
+
+Maybe you want to change the onedark theme lockscreen to match the desktop theme. If you want so, make the next changes to the <a href="">sddm</a> theme:
+
+ ```bash
+# First, be shure to be at the dpv-theme-files directory
+sudo cp dotfiles/resources/waves.png /usr/share/sddm/themes/archcraft/Backgrounds/
+sudo sed -i 's/Backgrounds\/bg-1.png/Backgrounds\/waves.png/g' /usr/share/sddm/themes/archcraft/theme.conf
+```
+
+Then you can also change the lockscreen that appears when you suspend the computer:
+
+```bash
+betterlockscreen -u dotfiles/resources/waves.png
 ```
 
 ## Applying the theme
