@@ -19,7 +19,6 @@
 </h1>
 <br>
 
-
 This repository contains a color theme mainly designed for Archcraft, an Archlinux distribution. 
 Below you can find a guide to install this theme on your system and apply it, as well as the color theme for GTK and system icons.
 
@@ -43,7 +42,7 @@ cd && mkdir dpv-theme-files
 
 # Clone the repo
 cd dpv-theme-files
-git clone https://github.com/dpv927/dotfiles.git && cd dotfiles
+git clone https://github.com/dpv927/dotfiles.git
 ```
 
 Now you have to copy the theme to the path of your archcraft system where all the themes are stored:
@@ -54,12 +53,12 @@ Now you have to copy the theme to the path of your archcraft system where all th
 SCR_RES="3840x2160"
 cp -r dotfiles/${SCR_RES}/theme/ ~/.config/bspwm/themes
 
-# If you want to, you can change the name of the topic
+# If you want to, you can change the name of the theme
 THEME_NAME="theme-name"
 mv ~/.config/bspwm/themes/theme ~/.config/bspwm/themes/${THEME_NAME}
 ```
 
-Finally, copy the contents of my Xresources file to fix the cursor size:
+Finally, if you are using a big resolution like 3840x2160px, copy the contents of my Xresources file to fix the cursor size:
 
 ```bash
 cat dotfiles/${SCR_RES}/.Xresources >> ~/.Xresources
@@ -67,6 +66,7 @@ cat dotfiles/${SCR_RES}/.Xresources >> ~/.Xresources
 
 ## Installing the GTK theme
 
+I use the official Catppuccin theme for GTK. You can install it with ``yay``:
 
 ```bash
 yay -S catppuccin-gtk-theme-frappe
@@ -83,13 +83,12 @@ wget -qO- https://git.io/papirus-icon-theme-install | sh
 Finally we installed the Catppuccin theme:
 
 ```bash
-# Enter the file directory again
-cd ~/dpv-theme-files
+# Clone the theme's files
+git clone https://github.com/catppuccin/papirus-folders.git
 
-# Clone and install the theme's files
-git clone https://github.com/catppuccin/papirus-folders.git && cd papirus-folders
-sudo cp -r src/* /usr/share/icons/Papirus
-./papirus-folders -C cat-frappe-lavender --theme Papirus-Dark
+# Install the theme
+sudo cp -r papirus-folders/src/* /usr/share/icons/Papirus
+./papirus-folders/papirus-folders -C cat-frappe-lavender --theme Papirus-Dark
 ```
 
 ## Applying the theme
@@ -104,7 +103,8 @@ cd ~/.config/bspwm/themes/${THEME_NAME} && ./apply.sh
 Optionally you can install my configuration for <a href="https://www.lunarvim.org/es/">LunarVim</a>, which is a very useful and elegant distribution of <a href="https://neovim.io/">Neovim</a>. To do so, install Lunarvim as indicated in its official page and copy my configuration:
 
 ```bash
-cp -r ~/cd dpv-theme-files/dotfiles/lvim/ ~/.config
+# Be shure to be on the dpv-theme-files directory
+cp -r /dotfiles/lvim/ ~/.config
 ```
 
 ## License
