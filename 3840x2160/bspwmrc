@@ -64,7 +64,8 @@ for i in ${files[@]}; do
    bspc rule -a $i desktop='^3' follow=on focus=on; done
 
 ## < Workspace 4 > code
-declare -a code=(Geany code-oss)
+declare -a code=(Geany code-oss Emacs)
+bspc rule -a Emacs desktop='^4' follow=on focus=on state=tiled
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^4' follow=on focus=on; done
 
@@ -128,6 +129,12 @@ xsetroot -cursor_name left_ptr
 
 # Restore wallpaper
 bash ~/.fehbg
+
+# Start emacs daemon
+# emacs-daemon &
+
+# Start mpd
+# mpd &
 
 # Start bspwm scripts
 bspbar

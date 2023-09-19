@@ -155,15 +155,14 @@ xsetroot -cursor_name left_ptr
 # Restore wallpaper
 bash ~/.fehbg
 
+# Start emacs daemon
+# emacs-daemon &
+
 # Start mpd
-exec mpd &
+# exec mpd &
 
 # Start bspwm scripts
 bspbar
 bspcomp
 bspdunst
 bspfloat &
-
-# Start emacs daemon
-emacs-daemon
-

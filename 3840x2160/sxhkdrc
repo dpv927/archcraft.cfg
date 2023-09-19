@@ -32,6 +32,10 @@ super + {b,m,n,r,s,t,w,x}
 
 ##---------- Applications ----------##
 
+# Emacs
+super + e
+  emacs
+
 # Launch Apps
 super + shift + {f,w,e}
 	{thunar,firefox,geany}
