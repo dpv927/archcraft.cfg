@@ -1,7 +1,7 @@
 # <picture><img src = "https://skillicons.dev/icons?i=emacs" width = 30px></picture> **Doom Emacs**
 
 <!-- Doom emacs preview -->
-<img src="doom/preview.png">
+<img src="./preview.png">
 
 ## Contents
 - <a href="http://a.com">About</a>
