@@ -4,10 +4,10 @@
 </div>
 
 <div class='preview'>
-    <!-- Theme preview, thunar, and lokscreen -->
-    <br><img src='resources/preview.png'>
-    <br><img src='resources/gtk.png'>
-    <br><img src="resources/login.png">
+    <!-- Theme preview -->
+    <br><img src='resources/prev1.png'>
+    <br><img src='resources/prev2.png'>
+    <br><img src="resources/prev3.png">
 </div>
 
 <h1>
@@ -30,7 +30,6 @@ Below you can find a guide to install this theme on your system and apply it, as
 - <a href="#installing-the-icon-theme">Installing the icon theme</a>
 - <a href="#changing-the-lockscreen">Changing the lockscreen</a>
 - <a href="#applying-the-theme">Applying the theme</a>
-- <a href="#lvim-config">Lvim config</a>
 - <a href="#license">License</a>
   
 ## Installing the theme
@@ -114,14 +113,6 @@ Applying the theme is very simple, just press the ``Win+t`` keys (that is the de
 
 ```bash
 cd ~/.config/bspwm/themes/${THEME_NAME} && ./apply.sh
-```
-
-## Lvim config
-Optionally you can install my configuration for <a href="https://www.lunarvim.org/es/">LunarVim</a>, which is a very useful and elegant distribution of <a href="https://neovim.io/">Neovim</a>. To do so, install Lunarvim as indicated in its official page and copy my configuration:
-
-```bash
-# Be shure to be on the dpv-theme-files directory
-cp -r /dotfiles/lvim/ ~/.config
 ```
 
 ## License
