@@ -1,13 +1,11 @@
 <div class='logo' align='center'>
     <!-- Repo logo | bspwm @dpv927  -->
-    <img src='resources/logo.png' height='150'>
+    <img src='assets/logo.png' height='150'>
 </div>
 
 <div class='preview'>
     <!-- Theme preview -->
-    <br><img src='resources/prev1.png'>
-    <br><img src='resources/prev2.png'>
-    <br><img src="resources/prev3.png">
+    <br><img src='assets/onedark.png'>
 </div>
 
 <h1>
