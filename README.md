@@ -18,17 +18,23 @@
 </h1>
 <br>
 
-This repository contains a color theme mainly designed for Archcraft, an Archlinux distribution. 
-Below you can find a guide to install this theme on your system and apply it, as well as the color theme for GTK and system icons.
+This repository contains various color themes mainly designed for Archcraft, an Archlinux distribution. 
+Below you can find a guide to install this theme on your system and apply them, as well as the color theme for GTK and system icons.
 
 ## Table of Contents
 
+- <a href="#available-themes">Available themes</a>
 - <a href="#installing-the-theme">Installing the theme</a>
 - <a href="#installing-the-gtk-theme">Installing the GTK theme</a>
 - <a href="#installing-the-icon-theme">Installing the icon theme</a>
 - <a href="#changing-the-lockscreen">Changing the lockscreen</a>
 - <a href="#applying-the-theme">Applying the theme</a>
 - <a href="#license">License</a>
+
+## Available themes
+- <a href="themes/onedark">Onedark</a>
+- <a href="themes/catppuccin">Catppuccin</a>
+
   
 ## Installing the theme
 
@@ -46,63 +52,80 @@ git clone https://github.com/dpv927/dotfiles.git
 Now you have to copy the theme to the path of your archcraft system where all the themes are stored:
 
 ```bash
+# Define your desired theme to install
+THEME_NAME="onedark" # See the list of available themes above
+
 # Define your screen resolution with one of the following variables: 
-# SCR_RES="1366x768"
-SCR_RES="3840x2160"
-cp -r dotfiles/${SCR_RES}/theme/ ~/.config/bspwm/themes
+cp -r dotfiles/themes/${THEME_NAME}/ ~/.config/bspwm/themes
 
 # If you want to, you can change the name of the theme
-THEME_NAME="theme-name"
-mv ~/.config/bspwm/themes/theme ~/.config/bspwm/themes/${THEME_NAME}
+NEW_THEME_NAME="theme-name"
+mv ~/.config/bspwm/themes/${THEME_NAME} ~/.config/bspwm/themes/${NEW_THEME_NAME}
 ```
 
 Finally, if you are using a big resolution like 3840x2160px, copy the contents of my Xresources file to fix the cursor size:
 
 ```bash
-cat dotfiles/${SCR_RES}/.Xresources >> ~/.Xresources
+cat dotfiles/config/.Xresources >> ~/.Xresources
 ```
 
 ## Installing the GTK theme
 
-I use the official Catppuccin theme for GTK. You can install it with <a href="https://aur.archlinux.org/packages/yay">yay</a>:
+<details>
+  <summary>Catppuccin theme</summary>
+  <br>
+  <p>I use the official Catppuccin theme for GTK. You can install it with <a href="https://aur.archlinux.org/packages/yay">yay</a>:</p>
 
-```bash
-yay -S catppuccin-gtk-theme-frappe
-```
+  ```
+  yay -S catppuccin-gtk-theme-frappe
+  ```
+---
+</details>
 
 ## Installing the icon theme
 
-The theme I use for the system icons is the official <a href="https://github.com/catppuccin/papirus-folders">Catppuccin</a> theme. First you need to have the <a href="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme">Papirus</a> icon theme, which is installed with the following command:
+<details>
+  <summary>Catppuccin theme</summary>
+  <br>
 
-```bash
-wget -qO- https://git.io/papirus-icon-theme-install | sh
-```
+  <p>The theme I use for the system icons is the official <a href="https://github.com/catppuccin/papirus-folders">Catppuccin</a> theme. First you need to have the <a href="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme">Papirus</a> icon theme, which is installed with the following command:</p>
 
-Finally we installed the Catppuccin theme:
+  ```bash
+  wget -qO- https://git.io/papirus-icon-theme-install | sh
+  ```
 
-```bash
-# Clone the theme's files
-git clone https://github.com/catppuccin/papirus-folders.git
+  Finally we installed the Catppuccin theme:
 
-# Install the theme
-sudo cp -r papirus-folders/src/* /usr/share/icons/Papirus
-./papirus-folders/papirus-folders -C cat-frappe-lavender --theme Papirus-Dark
-```
+  ```bash
+  # Clone the theme's files
+  git clone https://github.com/catppuccin/papirus-folders.git
+
+  # Install the theme
+  sudo cp -r papirus-folders/src/* /usr/share/icons/Papirus
+  ./papirus-folders/papirus-folders -C cat-frappe-lavender --theme Papirus-Dark
+  ```
+---
+</details>
 
 ## Changing the lockscreen
 
-Maybe you want to change the onedark theme lockscreen to match the desktop theme. If you want so, make the next changes to the <a href="">sddm</a> theme:
+Maybe you want to change the onedark theme lockscreen to match the desktop theme. There are various wallpapers available at the <a href="wallpapers">wallpapers directory</a> that maybe match with your ideas. If you want so, make the next changes to the <a href="">sddm</a> theme:
 
  ```bash
 # First, be shure to be at the dpv-theme-files directory
-sudo cp dotfiles/resources/waves.png /usr/share/sddm/themes/archcraft/Backgrounds/
-sudo sed -i 's/Backgrounds\/bg-1.png/Backgrounds\/waves.png/g' /usr/share/sddm/themes/archcraft/theme.conf
+cd ~/dpv-theme-files
+WALLPAPER_NAME="waves.png" # change this, is an example
+
+# Update the SDDM lockscreen
+sudo cp dotfiles/wallpapers/${WALLPAPER_NAME} /usr/share/sddm/themes/archcraft/Backgrounds/
+sudo sed -i 's/Backgrounds\/bg-1.png/Backgrounds\/${WALLPAPER_NAME}/g' /usr/share/sddm/themes/archcraft/theme.conf
 ```
 
 Then you can also change the lockscreen that appears when you suspend the computer:
 
 ```bash
-betterlockscreen -u dotfiles/resources/waves.png
+# Dont forget to set $WALLPAPER_NAME!
+betterlockscreen -u dotfiles/resources/${WALLPAPER_NAME}
 ```
 
 ## Applying the theme
@@ -110,7 +133,7 @@ betterlockscreen -u dotfiles/resources/waves.png
 Applying the theme is very simple, just press the ``Win+t`` keys (that is the default combination) or run the theme script:
 
 ```bash
-cd ~/.config/bspwm/themes/${THEME_NAME} && ./apply.sh
+sh ~/.config/bspwm/themes/${THEME_NAME}/apply.sh
 ```
 
 ## License
